@@ -3,30 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>first article | Hexo</title>
+  <title>jQuery.extend | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery.extend 函数详解JQuery的extend扩展方法：Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
+  <meta name="description" content="JQuery的extend扩展方法：Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
 一、Jquery的扩展方法原型是:　　　
  extend(dest,src1,src2,src3…);
 
-它的含义是将src1,src2,src3...合并到dest中,返回值为合并后的dest,由此可以看出该">
+它的含义是将src1,src2,src3...合并到dest中,返回值为合并后的dest,由此可以看出该方法合并后，是修改了dest的结构的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first article">
-<meta property="og:url" content="http://luckyhawk.github.com/2015/07/12/article/index.html">
+<meta property="og:title" content="jQuery.extend">
+<meta property="og:url" content="http://luckyhawk.github.com/2015/07/13/article/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="jQuery.extend 函数详解JQuery的extend扩展方法：Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
+<meta property="og:description" content="JQuery的extend扩展方法：Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
 一、Jquery的扩展方法原型是:　　　
  extend(dest,src1,src2,src3…);
 
-它的含义是将src1,src2,src3...合并到dest中,返回值为合并后的dest,由此可以看出该">
-<meta property="og:updated_time" content="2015-07-13T06:46:16.000Z">
+它的含义是将src1,src2,src3...合并到dest中,返回值为合并后的dest,由此可以看出该方法合并后，是修改了dest的结构的">
+<meta property="og:updated_time" content="2015-07-13T06:53:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first article">
-<meta name="twitter:description" content="jQuery.extend 函数详解JQuery的extend扩展方法：Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
+<meta name="twitter:title" content="jQuery.extend">
+<meta name="twitter:description" content="JQuery的extend扩展方法：Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
 一、Jquery的扩展方法原型是:　　　
  extend(dest,src1,src2,src3…);
 
-它的含义是将src1,src2,src3...合并到dest中,返回值为合并后的dest,由此可以看出该">
+它的含义是将src1,src2,src3...合并到dest中,返回值为合并后的dest,由此可以看出该方法合并后，是修改了dest的结构的">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -74,8 +74,8 @@
       <div class="outer">
         <section id="main"><article id="post-article" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/12/article/" class="article-date">
-  <time datetime="2015-07-12T11:32:22.000Z" itemprop="datePublished">2015-07-12</time>
+    <a href="/2015/07/13/article/" class="article-date">
+  <time datetime="2015-07-13T06:32:22.000Z" itemprop="datePublished">2015-07-13</time>
 </a>
     
   </div>
@@ -86,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      first article
+      jQuery.extend
     </h1>
   
 
@@ -94,33 +94,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jQuery-extend_函数详解">jQuery.extend 函数详解</h1><h2 id="JQuery的extend扩展方法：">JQuery的extend扩展方法：</h2><pre><code>Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
+        <h2 id="JQuery的extend扩展方法：">JQuery的extend扩展方法：</h2><pre><code>Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。
 一、Jquery的扩展方法原型是:　　　
 </code></pre> <pre><code>extend(dest,src1,src2,src3…);</code></pre>
 
 <pre><code>它的含义是将src1,src2,src3<span class="attribute">...</span>合并到dest中,返回值为合并后的dest,由此可以看出该方法合并后，是修改了dest的结构的。如果想要得到合并的结果却又不想修改dest的结构，可以如下使用：
-</code></pre>  <pre><code>var newSrc=$.extend({},src1,src2,src3...)//也就是将"{}"作为dest参数。</code></pre>
+</code></pre>  <pre><code>
+    var newSrc=$.extend({},src1,src2,src3...)//也就是将"{}"作为dest参数。
+  </code></pre>
 
 <pre><code>这样就可以将src1,src2,src3<span class="attribute">...</span>进行合并，然后将合并结果返回给newSrc了。如下例：
-</code></pre><pre><code>var result=$.extend({},{name:"Tom",age:21},{name:"Jerry",sex:"Boy”})</code></pre>
+</code></pre><pre><code>
+    var result=$.extend({},{name:"Tom",age:21},{name:"Jerry",sex:"Boy”})
+</code></pre>
 
 
 <pre><code>那么合并后的结果
-</code></pre>  <pre><code>result={name:"Jerry",age:21,sex:"Boy”}</code></pre>
+</code></pre>  <pre><code>
+result={name:"Jerry",age:21,sex:"Boy”}
+</code></pre>
 
 <pre><code>也就是说后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
 
 二、省略dest参数
 上述的<span class="built_in">extend</span>方法原型中的dest参数是可以省略的，如果省略了，则该方法就只能有一个src参数，而且是将该src合并到调用<span class="built_in">extend</span>方法的对象中去，如：
 </code></pre><p> 　　1、$.extend(src)<br> 　　该方法就是将src合并到jquery的全局对象中去，如：</p>
- <pre><code>$.extend({
+ <pre><code>
+$.extend({
   hello:function(){alert('hello');}
-  });</code></pre>
+  });
+</code></pre>
 
 <p> 　　就是将hello方法合并到jquery的全局对象中。<br> 　　2、$.fn.extend(src)<br> 　　该方法将src合并到jquery的实例对象中去，如:</p>
- <pre><code>$.fn.extend({
+ <pre><code>
+$.fn.extend({
   hello:function(){alert('hello');}
- });</code></pre>
+ });
+</code></pre>
 
 
 <p>　　 就是将hello方法合并到jquery的实例对象中。</p>
@@ -171,7 +181,7 @@ var result=$.extend( false, {},
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luckyhawk.github.com/2015/07/12/article/" data-id="cic0kpzhi0000mo0tz4mfof2g" class="article-share-link">Share</a>
+      <a data-url="http://luckyhawk.github.com/2015/07/13/article/" data-id="cic1k0sjt0000o00t8i8lt7bs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tags1/">tags1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tags2/">tags2</a></li></ul>
@@ -233,7 +243,7 @@ var result=$.extend( false, {},
       <ul>
         
           <li>
-            <a href="/2015/07/12/article/">first article</a>
+            <a href="/2015/07/13/article/">jQuery.extend</a>
           </li>
         
           <li>
